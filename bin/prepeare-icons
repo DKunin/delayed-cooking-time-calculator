@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# sizes=( 128 32 16 )
+
+# for i in "${sizes[@]}"
+# do
+#    ffmpeg -i ./original-icon.png -vf scale=$i:$i ./assets/images/icon-$i.png
+# done
+
+ffmpeg -i ./original-icon.png -vf scale=200:200 ./src/assets/logo.png
