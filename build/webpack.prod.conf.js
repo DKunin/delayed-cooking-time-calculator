@@ -16,10 +16,10 @@ var webpackConfig = merge(baseWebpackConfig, {
     module: {
         rules: utils.styleLoaders({
             sourceMap: config.build.productionSourceMap,
-            extract: true
+            extract: false
         })
     },
-    devtool: config.build.productionSourceMap ? '#source-map' : false,
+    devtool: false,
     output: {
         path: config.build.assetsRoot,
         filename: utils.assetsPath('js/[name].[chunkhash].js'),
@@ -34,7 +34,7 @@ var webpackConfig = merge(baseWebpackConfig, {
             compress: {
                 warnings: false
             },
-            sourceMap: true
+            sourceMap: false
         }),
         // extract css into its own file
         new ExtractTextPlugin({
@@ -47,19 +47,14 @@ var webpackConfig = merge(baseWebpackConfig, {
                 safe: true
             }
         }),
-        // generate dist index.html with correct asset hash for caching.
-        // you can customize output by editing /index.html
-        // see https://github.com/ampedandwired/html-webpack-plugin
         new HtmlWebpackPlugin({
             filename: config.build.index,
             template: 'index.html',
             inject: true,
             minify: {
                 removeComments: true,
-                collapseWhitespace: true,
+                collapseWhitespace: false,
                 removeAttributeQuotes: true
-                // more options:
-                // https://github.com/kangax/html-minifier#options-quick-reference
             },
             // necessary to consistently work with multiple chunks via CommonsChunkPlugin
             chunksSortMode: 'dependency'
@@ -82,7 +77,7 @@ var webpackConfig = merge(baseWebpackConfig, {
         // prevent vendor hash from being updated whenever app bundle is updated
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
-            chunks: ['vendor']
+            chunks: [ 'vendor' ]
         }),
         // copy custom static assets
         new CopyWebpackPlugin([

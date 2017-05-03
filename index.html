@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cook delay timer calculator</title>
-    <link rel="icon" type="image/png" href="./static/img/favicon.png" />
-    <link rel="manifest" href="./static/manifest.json">
+    <link rel="icon" type="image/png" href="static/img/favicon.png" />
+    <link rel="manifest" href="static/manifest.json">
     <meta name="theme-color" content="#4DBA87">
     <% for (var chunk of webpack.chunks) {
         for (var file of chunk.files) {
           if (file.match(/\.(js|css)$/)) { %>
-    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href=".<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
   </head>
   <body>
     <div id="app">This is your fallback content in case JavaScript fails to load.</div>
     <!-- Todo: only include in production -->
     <script>
         if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+            navigator.serviceWorker.register('./service-worker.js', { scope: './' })
                 .then(function(registration) {
                     console.log('Service Worker Registered');
             });
