@@ -1,9 +1,9 @@
 {
   "name": "delayed-cooking-time-calculator",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Calculator to get needed delayed period for cooking",
   "author": "DKunin",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "main": "dist/index.html",
   "scripts": {
