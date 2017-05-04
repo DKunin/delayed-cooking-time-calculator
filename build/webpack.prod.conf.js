@@ -77,21 +77,21 @@ var webpackConfig = merge(baseWebpackConfig, {
         // prevent vendor hash from being updated whenever app bundle is updated
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
-            chunks: [ 'vendor' ]
+            chunks: ['vendor']
         }),
         // copy custom static assets
         new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname, '../static'),
                 to: config.build.assetsSubDirectory,
-                ignore: [ '.*' ]
+                ignore: ['.*']
             }
         ]),
         // service worker caching
         new SWPrecacheWebpackPlugin({
             cacheId: 'my-vue-app',
             filename: 'service-worker.js',
-            staticFileGlobs: [ 'dist/**/*.{js,html,css}' ],
+            staticFileGlobs: ['dist/**/*.{js,html,css}'],
             minify: false,
             stripPrefix: 'dist/'
         })

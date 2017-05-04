@@ -18,7 +18,7 @@ module.exports = {
         port: 9090,
         autoOpenBrowser: true,
         assetsSubDirectory: 'static',
-        assetsPublicPath: './',
+        assetsPublicPath: '/',
         proxyTable: {},
         cssSourceMap: false
     }
