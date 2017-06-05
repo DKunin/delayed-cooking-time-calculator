@@ -31,12 +31,12 @@ export default {
   data() {
     return {
       time: {
-        HH: '07',
-        mm: '00',
+        HH: '06',
+        mm: '15',
       },
       cook: {
         HH: '00',
-        mm: '30',
+        mm: '40',
       },
     };
   },
