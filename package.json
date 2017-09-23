@@ -1,6 +1,6 @@
 {
   "name": "delayed-cooking-time-calculator",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Calculator to get needed delayed period for cooking",
   "author": "DKunin",
   "license": "MIT",
@@ -8,16 +8,19 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
+    "publish": "npm run build && ./bin/publish",
     "pretty": "prettier ./config/*.js ./src/*.js ./build/*.js --single-quote --tab-width 4 --write"
   },
   "dependencies": {
     "fecha": "2.3.0",
+    "gh-pages": "1.0.0",
     "pretty-ms": "2.1.0",
     "vue": "^2.2.2",
     "vue2-timepicker": "0.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
+    "babel-preset-es2015": "6.24.1",
     "babel-core": "^6.22.1",
     "sw-precache-webpack-plugin": "^0.9.1",
     "babel-eslint": "^7.1.1",
